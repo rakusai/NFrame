@@ -2,7 +2,7 @@
 /**
  * action_controller.php
  *
- * ウェブアプリフレームワークのコントローラーレベルの関数群
+ * フレームワークのコントローラーレベルの関数群
  * 
  * Created by Isshu Rakusai
  * Copyright (c) 2013 Nota Inc. All rights reserved.

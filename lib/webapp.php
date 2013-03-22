@@ -2,7 +2,7 @@
 /**
  * webapp.php
  *
- * ウェブアプリフレームワークのアプリレベルの関数群
+ * フレームワークのアプリレベルの関数群
  * 
  * Created by Isshu Rakusai
  * Copyright (c) 2013 Nota Inc. All rights reserved.
@@ -18,6 +18,13 @@
     "/user/(.*)" => "UserHandler",
     "/" => "TopHandler",
    ));
+   
+   function TestHandler() {
+      print "hello!";
+   }
+   function UserHandler($username) {
+      print $username;
+   }
  */
 function webapp_run($urls) 
 {
