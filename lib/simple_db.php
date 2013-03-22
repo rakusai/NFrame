@@ -69,8 +69,8 @@ function closedb()
  * select_db_rows($table,$column,$filters,$sorts,$start,$limit,$groups=null, $join=null) -- DBから一定の条件で行を返す
  * $table -- テーブル名
  * $column -- 取得するカンマ区切りのコラム
- * $filters -- array 抽出条件（WHERE文）
- * $sort -- array 並べ替え条件（ORDER文）
+ * $filters -- array 抽出条件（WHERE節）
+ * $sort -- array 並べ替え条件（ORDER節）
  * $start -- 開始番号
  * $limit -- 出力数
  *
@@ -161,8 +161,8 @@ function select_db_rows($table, $column, $filters, $sorts, $start, $limit, $grou
 /**
  * get_db_row($table,$filters,$sorts) -- DBからマッチした条件の先頭行だけ返す
  * $table -- テーブル名
- * $filters -- array 抽出条件（WHERE文）
- * $sort -- array 並べ替え条件（ORDER文）
+ * $filters -- array 抽出条件（WHERE節）
+ * $sort -- array 並べ替え条件（ORDER節）
  *
  * 戻り値 -- 条件にマッチすれば辞書を返す。マッチしなければfalseを返す。
  * 
@@ -213,7 +213,7 @@ function add_tbl_name(&$val, $key, $prefix)
 /**
  * count_db_rows($table,$column,$filters) -- DBから一定の条件で行の合計数を返す
  * $table -- テーブル名
- * $filters -- array
+ * $filters -- array 抽出条件（WHERE節）
  * 
  * 戻り値 -- 条件にマッチすれば数字を返す。マッチしなければ0を返す
  * 
@@ -254,8 +254,8 @@ function count_db_rows($table, $filters, $groups=null)
 /**
  * update_db_rows($table, $filters, $row_data) -- DBを更新する
  * $table -- テーブル名
- * $filters -- array
- * $row_data -- array
+ * $filters -- array 抽出条件（WHERE節）
+ * $row_data -- array 保存するデータの連想配列
  * 
  * 戻り値 -- mysql_queryの戻り値を返す
  *
@@ -297,7 +297,7 @@ function update_db_rows($table, $filters, $row_data)
 /**
  * insert_db_rows($table, $row_data) -- DBに行を追加する
  * $table -- テーブル名
- * $row_data -- array
+ * $row_data -- array 挿入するデータの連想配列
  * 
  * 戻り値 -- 挿入した行のidを返す。
  */
@@ -337,7 +337,7 @@ function insert_db_rows($table, $row_data)
 /**
  * delete_db_rows($table, $filters) -- DBの行を削除する
  * $table -- テーブル名
- * $filters -- array
+ * $filters -- array  抽出条件（WHERE節）
  *
  * 戻り値 -- mysql_queryの戻り値を返す
  * 
