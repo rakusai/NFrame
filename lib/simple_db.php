@@ -79,9 +79,10 @@ function closedb()
  * サンプル
  * 
  * //select_db_rows("board","*",NULL,array("remixed_count DESC"),0,50);
- * //select_db_rows("board","*",array(FILTER_AUTHOR=>"test"),array("remixed_count"),0,50);
- * //$join = array(TBL_BOARDS => "group_name", TBL_GROUPS => "group_name");
- * //$groups = select_db_rows(TBL_GROUPS,"*",$filters,array("updated_at DESC"),0,7,array("groups.group_name"),$join);
+ * //select_db_rows("board","*",array("author"=>"test"),array("remixed_count"),0,50);
+ * //select_db_rows("board","*",array("date >"=>"2013-02-20 00:00:00"),array("remixed_count"),0,50);
+ * //$join = array("board" => "author", "card" => "author");
+ * //$groups = select_db_rows("board","*",$filters,array("updated_at DESC"),0,7,array("board.author"),$join);
  */
 function select_db_rows($table, $column, $filters, $sorts, $start, $limit, $groups=null, $join=null)
 {
@@ -182,13 +183,13 @@ function get_db_row($table, $filters, $sorts=null)
 }
 
 /**
- * get_db_rows_by_sql($sql) -- DBから直接SQL文で一定の条件で行を返す
+ * select_db_rows_by_sql($sql) -- DBから直接SQL文で一定の条件で行を返す
  * $sql -- SQL文
  * 
  * 戻り値 -- 条件にマッチすれば配列を返す。マッチしなければ空の配列を返す
  * 
  */
-function get_db_rows_by_sql($sql)
+function select_db_rows_by_sql($sql)
 {
     $db = getdb();
 	$sql = "SELECT " . $sql;

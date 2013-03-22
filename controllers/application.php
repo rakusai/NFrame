@@ -6,6 +6,7 @@
 require_once("../lib/config.php");
 require_once("../lib/webapp.php");
 require_once("../lib/action_controller.php");
+require_once("../lib/view_utils.php");
 require_once("../lib/simple_db.php");
 
 // コントローラを読み込む

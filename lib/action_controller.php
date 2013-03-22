@@ -43,7 +43,7 @@ function render_json($obj, $callback = null)
 }
 
 /*
- * エラーを出力するファイルを返す
+ * エラーをHTMLで出力する
  */ 
 function render_error($msg, $status=500)
 {
